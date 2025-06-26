@@ -1,0 +1,110 @@
+const caixaPrincipal = document.querySelector(".caixa-principal");
+const caixaPerguntas = document.querySelector(".caixa-perguntas");
+const caixaAlternativas = document.querySelector(".caixa-alternativas");
+const caixaResultado = document.querySelector(".caixa-resultado");
+const textoResultado = document.querySelector(".texto-resultado");
+
+const perguntas = [
+  {
+    enunciado:
+      "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
+    alternativas: [
+      {
+        texto: "Isso é assustador!",
+        afirmacao: [const caixaPrincipal = document.querySelector(".caixa-principal");
+        const caixaPerguntas = document.querySelector(".caixa-perguntas");
+        const caixaAlternativas = document.querySelector(".caixa-alternativas");
+        const caixaResultado = document.querySelector(".caixa-resultado");
+        const textoResultado = document.querySelector(".texto-resultado");
+        
+        const perguntas = [
+          {
+            enunciado:
+              "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
+            alternativas: [
+              {
+                texto: "Isso é assustador!",
+                afirmacao: [
+                  "No início ficou com medo do que essa tecnologia pode fazer.",
+                  "Achou assustador pensar na velocidade na qual a tecnologia está avançando.",
+                ],
+              },
+              {
+                texto: "Isso é maravilhoso!",
+                afirmacao: [
+                  "Quis saber como usar IA no seu dia a dia.",
+                  "Foi atrás de vídeos, artigos e mais informações sobre como utilizar essa tecnologia.",
+                ],
+              },
+            ],
+          },
+        ];
+          "No início ficou com medo do que essa tecnologia pode fazer.",
+          "Achou assustador pensar na velocidade na qual a tecnologia está avançando.",
+        ],
+      },
+      {
+        texto: "Isso é maravilhoso!",
+        afirmacao: [
+          "Quis saber como usar IA no seu dia a dia.",
+          "Foi atrás de vídeos, artigos e mais informações sobre como utilizar essa tecnologia.",
+        ],
+      },
+    ],
+  },
+];
+
+let atual = 0; // Tracks the current question index
+let afirmacoesFinais = []; // Stores the affirmations chosen by the user
+
+// ---
+## Core Functionsconst caixaPrincipal = document.querySelector(".caixa-principal");
+const caixaPerguntas = document.querySelector(".caixa-perguntas");
+const caixaAlternativas = document.querySelector(".caixa-alternativas");
+const caixaResultado = document.querySelector(".caixa-resultado");
+const textoResultado = document.querySelector(".texto-resultado");
+
+const perguntas = [
+  {
+    enunciado:
+      "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
+    alternativas: [
+      {
+        texto: "Isso é assustador!",
+        afirmacao: [
+          "No início ficou com medo do que essa tecnologia pode fazer.",
+          "Achou assustador pensar na velocidade na qual a tecnologia está avançando.",
+        ],
+      },
+      {
+        texto: "Isso é maravilhoso!",
+        afirmacao: [
+          "Quis saber como usar IA no seu dia a dia.",
+          "Foi atrás de vídeos, artigos e mais informações sobre como utilizar essa tecnologia.",
+        ],
+      },
+    ],
+  },
+];
+
+### Shows a Question
+```javascript
+function mostraPergunta() {
+  if (atual >= perguntas.length) {
+    mostraResultado(); // If all questions answered, show result
+    return;
+  }
+  const perguntaAtual = perguntas[atual];
+  caixaPerguntas.textContent = perguntaAtual.enunciado; // Set the question text
+  caixaAlternativas.innerHTML = ""; // Clear previous alternatives
+
+  perguntaAtual.alternativas.forEach((alternativa) => {
+    const botaoAlternativa = document.createElement("button");
+    botaoAlternativa.textContent = alternativa.texto;
+    botaoAlternativa.classList.add("botao-alternativa"); // Add a class for styling
+    botaoAlternativa.addEventListener("click", () =>
+      escolheAlternativa(alternativa)
+    );
+    caixaAlternativas.appendChild(botaoAlternativa);
+  });
+}
